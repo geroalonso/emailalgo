@@ -8,7 +8,6 @@ import re
 emails = []
 
 
-
 def lengthofset(setlist):
   counter = 0
   for i in set(setlist):
@@ -46,10 +45,8 @@ def openscrape(url):
 	#parsing the data with beautiful soup
 	soup = BeautifulSoup(response_text, 'html.parser')
 
-#[\w\.-]+@+[\w\.-]+
-
 	#scrape for the emails
-	emails.extend(list(set(re.findall(r'[\w\.-]+@+[\w\.-]+[.com]', response_text)))) #regex to search emails 
+	emails.extend(list(set(re.findall(r'^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$', response_text)))) #regex to search emails 
 	#scrape for the links in the site
 	href_list = []
 	links = soup.find_all('a')
@@ -89,8 +86,14 @@ def crawling(baseurl):
       f.write(item + '\n')
 
 
+crawling('https://ibericmalls.com')
 
-print('arranca')
-crawling('https://ibericmalls.com' )
+
+
+
+
+
+
+
 
 

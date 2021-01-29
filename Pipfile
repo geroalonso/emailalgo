@@ -7,10 +7,10 @@ verify_ssl = true
 
 [packages]
 requests = "*"
-beautifulsoup4 = "*"
-urlparse = "*"
-urllib-parse = "*"
-re = "*"
+bs4 = "*"
+lxml = "*"
+selenium = "*"
+webdriver-manager = "*"
 
 [requires]
 python_version = "3.8"

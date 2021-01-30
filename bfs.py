@@ -91,6 +91,6 @@ def crawling(baseurl):
 
 
 print('arranca')
-crawling('https://ibericmalls.com' )
+
 
 

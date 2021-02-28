@@ -9,15 +9,6 @@ emails = []
 
 
 
-def lengthofset(setlist):
-  counter = 0
-  for i in set(setlist):
-    counter += 1
-
-  return counter
-
-
-
 def localurlchecker(trial, site):
   test = urlparse(trial.replace("www.","")).netloc
   base = urlparse(site.replace("www.","")).netloc
@@ -28,7 +19,6 @@ def localurlchecker(trial, site):
   else:
     return False
 
-#Making the request with requests
 def openscrape(url):
   '''This function algorithm is the following:
       1) opens the url defined in the parameter
@@ -143,8 +133,6 @@ def yelp():
       #everything will be stored in lista
       conglomerado = []
 
-
-
       for business in business_data['businesses']:
             diccionario = {}
             diccionario ['url'] = business['url']
@@ -163,8 +151,8 @@ def yelp():
       print(conglomerado)
       return conglomerado 
 
-yelp()
-#TENGO TODO HASTA ACA, DEBO DEFINIR ANTES DE CORRER EL CODIGO EL OFFSET Y LA CATEGORIA, Y CON ESO ME SACA NOMBRE TELEFONO Y DIRECCION
+
+crawling('https://www.ibericmalls.com')
 
 
 
